@@ -104,6 +104,11 @@ simple_layout(ergodox_layout) {
         if (!print_right || $column != column_profile)
         translate([row_layout_offset_x[$row], column_layout_offset_y[column_profile]])
         key() {
+            
+          // fixes an issues with artisan handling
+          union()
+             sphere(0);
+
           if ($row == 2 && (column_profile == 4)) {
              //translate([0, 0, 1])
              sphere(1.5);
