@@ -17,3 +17,5 @@ the latest version. Some of the modification are:
    but my home row for my pinky is one key lower, so the dot there is one key lower.
 
 Note: The `stem_inner_slop` setting it low to minimize wiggle. But it maybe a bit hard to fit.
+
+![](image.png)
