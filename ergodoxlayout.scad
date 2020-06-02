@@ -12,10 +12,10 @@ ergodox_layout = [
 
 offset_y = [
   [-1, -1.0, 0, 0,-0.8,-1, 0.0],
-  [-0.5, 0, 0, 0,-0.5,-0.5, 0.0],
-  [0, -0.3, 0.0, 0, 0, 0, 0, 0.0],
-  [0.5, 0.5, 0, 0,0,0, 0.0],
-  [2, 1.5, 0, 0,0,1, 0.0],
+  [-1,-1, 0, 0,-0.5,-0.5, 0.0],
+  [0,    0, 0.0, 0, 0, 0, 0, 0.0],
+  [1,  1, 0, 0,0,0, 0.0],
+  [2.5,  2.5, 0, 0,0,1, 0.0],
 ];
 
 offset_z = [
@@ -35,21 +35,21 @@ row_offset_y = [-7, -3.5, 0, 2.5, 4.5];
 row_offset_z = [0.9, 0.4, -0.2, 0.5, 1.5];
 
 column_offset_x = [2, 0, 0, 0, -0.5, -2, 0, 0.0];
-column_offset_y = [-1.5, -1.5, 0, 0, 0, 0, 0.0]; // for pinky
+column_offset_y = [0, 0, 0, 0, 0, 0, 0.0]; // for pinky
 column_offset_z = [0.6, 0.7, 0, -0.2, 0.3, 0.4, 0.0];
-column_offset_size = [1.0, 1.0, 0, 0, 0, 0, 0.0]; // Make pinky smaller
+column_offset_size = [0.5, 0.5, 0, 0, 0, 0, 0.0]; // Make pinky smaller
 
 extra_height_scale = 3;
 
 // to turn on full sculpting
 $double_sculpted = true;
 // change this to make the full sculpting more or less aggressive. 200 is default
-$double_sculpt_radius = 200;
+$double_sculpt_radius = 400;
 
 row_length = len(ergodox_layout[0]);
 
 $rounded_key = !$devmode;
-$minkowski_radius = 0.6;
+//$minkowski_radius = 0.6;
 
 $stem_type = "cherry";  // [cherry, alps, rounded_cherry, box_cherry, filled, disable]
 
@@ -89,7 +89,7 @@ simple_layout(ergodox_layout) {
         $top_skew = column_offset_y[column_profile]+row_offset_y[$row]+offset_y[$row][column_profile];
         $top_skew_x = (column_offset_x[column_profile]+row_offset_x[$row])*column_factor;
 
-        $dish_depth = 1.5;
+        //$dish_depth = 0.8;
 
         $width_difference = 5;//+column_offset_size[column_profile];
         $height_difference = 6+column_offset_size[column_profile];
@@ -111,12 +111,15 @@ simple_layout(ergodox_layout) {
 
           if ($row == 2 && (column_profile == 4)) {
              //translate([0, 0, 1])
+             scale([1,1,0.6])
              sphere(1.5);
           }
           if ($row == 3 && (column_profile == 1)) {
              //translate([0, 0, 1])
+             scale([1,1,0.6])
              sphere(1.3);
           }
+          /*
           if ($row == 2 && (column_profile == 2)) {
              //translate([0, 0, 1])
              sphere(1.3);
@@ -125,6 +128,7 @@ simple_layout(ergodox_layout) {
              //translate([0, 0, 1])
              sphere(1.3);
           }
+          */
         }
       }
     }
