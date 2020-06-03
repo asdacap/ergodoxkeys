@@ -19,3 +19,7 @@ the latest version. Some of the modification are:
 Note: The `stem_inner_slop` setting it low to minimize wiggle. But it maybe a bit hard to fit.
 
 ![](image.png)
+
+I dont print other keys because I cant reach them.
+![](picture.jpg)
+
