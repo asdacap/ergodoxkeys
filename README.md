@@ -21,5 +21,5 @@ Note: The `stem_inner_slop` setting it low to minimize wiggle. But it maybe a bi
 ![](image.png)
 
 I dont print other keys because I cant reach them.
-![](picture.jpg)
+![](photo.jpg)
 
