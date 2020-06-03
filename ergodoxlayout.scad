@@ -89,14 +89,17 @@ simple_layout(ergodox_layout) {
         $top_skew = column_offset_y[column_profile]+row_offset_y[$row]+offset_y[$row][column_profile];
         $top_skew_x = (column_offset_x[column_profile]+row_offset_x[$row])*column_factor;
 
-        //$dish_depth = 0.8;
-
         $width_difference = 5;//+column_offset_size[column_profile];
         $height_difference = 6+column_offset_size[column_profile];
 
         // Key is a bit smaller
         $bottom_key_width = 17.16;
         $bottom_key_height = 17.16;
+
+        // Extra dish on resting key
+        $dish_depth = ($row == 2 && (column_profile == 4 || column_profile == 2 || column_profile == 3) ) ? 0.8 
+            : ($row == 3 && (column_profile == 1) ) ? 0.8 
+            : $dish_depth;
 
         if (column_idx == undef || column_profile == column_idx)
         if (row_idx == undef || $row == row_idx)
@@ -108,27 +111,6 @@ simple_layout(ergodox_layout) {
           // fixes an issues with artisan handling
           union()
              sphere(0);
-
-          if ($row == 2 && (column_profile == 4)) {
-             //translate([0, 0, 1])
-             scale([1,1,0.6])
-             sphere(1.5);
-          }
-          if ($row == 3 && (column_profile == 1)) {
-             //translate([0, 0, 1])
-             scale([1,1,0.6])
-             sphere(1.3);
-          }
-          /*
-          if ($row == 2 && (column_profile == 2)) {
-             //translate([0, 0, 1])
-             sphere(1.3);
-          }
-          if ($row == 2 && (column_profile == 3)) {
-             //translate([0, 0, 1])
-             sphere(1.3);
-          }
-          */
         }
       }
     }

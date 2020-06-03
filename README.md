@@ -13,8 +13,8 @@ the latest version. Some of the modification are:
    instead of a square. 
  - Make pinky key even smaller.
  - A bunch of stuff I dont remember.
- - A dot on all resting key. Which is the key that my finger rest. Usually on the home row, 
-   but my home row for my pinky is one key lower, so the dot there is one key lower.
+ - Resting keys have deeper dish. Which is the key that my finger rest. Usually on the home row, 
+   but my home row for my pinky is one key lower, so the key with deeper dish there is one key lower.
 
 Note: The `stem_inner_slop` setting it low to minimize wiggle. But it maybe a bit hard to fit.
 
